@@ -89,6 +89,7 @@ body {
             .button {
                 font-size: 1.25em;
                 font-weight: 200;
+                text-decoration: none;
             }
         }
     }
@@ -104,8 +105,9 @@ body {
     }
     .card-holder {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 25px;
+        gap: 10px;
+        grid-template-columns: repeat(3, minmax(240px, 1fr));
+        font-family: 'Roboto', sans-serif;
         .card {
             padding: 10px 10px 10px 10px;
             display: flex;
@@ -126,6 +128,7 @@ body {
     }
     .team {
         align-items: center;
+        font-family: 'Roboto', sans-serif;
         &>div.row-container {
             width: 90%;
             gap: 40px;
@@ -162,11 +165,23 @@ body {
                 background-clip: padding-box;
                 background-size: cover;
             }
+            .image-kiran {
+                background: url(../images/kiran-bansal.jpeg);
+                background-clip: padding-box;
+                background-size: cover;
+            }
+            .image-parveen {
+                background: url(../images/parveen-bansal.jpeg);
+                background-clip: padding-box;
+                background-size: cover;
+            }
             .noimage {
                 background: #ffffff;
             }
             .info {
                 max-width: 60%;
+                letter-spacing: 0.025em;
+                line-height: 1.5em;
             }
         }
     }
@@ -213,4 +228,17 @@ footer {
     filter: blur(4px);
     width: 100vw;
     height: 400px;
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        .team {
+            .pattern {
+                display: none;
+            }
+            .member {
+                width: 100%;
+            }
+        }
+    }
 }
