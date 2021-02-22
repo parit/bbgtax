@@ -9,7 +9,7 @@ module.exports = {
         asset: true
     },
     context: __dirname,
-    entry: ['./src/style/style.scss'],
+    entry: ['./src/js/script.js', './src/style/style.scss'],
     output: {
         path: path.resolve(__dirname, 'dist'),
         assetModuleFilename: function(args) {
