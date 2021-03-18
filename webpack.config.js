@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     experiments: {
@@ -36,12 +37,17 @@ module.exports = {
             {
                 test: /\.(png|jpe?g|gif)$/i,
                 type: 'asset',
-            }
+            },
         ]
     },
     plugins: [
         new CleanWebpackPlugin({
             verbose: true
+        }),
+        new CopyPlugin({
+            patterns: [
+                { from: "./src/files/", to: "files" }
+            ],
         }),
         new HtmlWebPackPlugin({
             template: "src/index.html",
